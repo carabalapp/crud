@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ArticuloController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts.plantillabase');
 });
+
+// Route::resource('articulos','app\Http\Cotrollers\ArticuloController');
+Route::resource('articulo',ArticuloController::class);
+// Route::get('articulo/create',[ArticuloController::class, 'create']);
+// Route::post('articulo',[ArticuloController::class, 'store']);
+// Route::get('articulo/edit',[ArticuloController::class, 'edit']);
+// Route::put('articulo/{{$articulo->id}}/edit',[ArticuloController::class, 'edit']);
+
+// Route::get('/form', 'UserController@userForm');
+// Route::get('/form',[UserController::class, 'userForm']);
